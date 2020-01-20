@@ -37,4 +37,12 @@ function findThreeLargestNumbers(arr) {
 // const testArray = [10,20,3,10,5];
 const testArray = [55,7,8];
 
-findThreeLargestNumbers(testArray)
+// findThreeLargestNumbers(testArray)
+
+
+// Using built in array methods
+function findThreeLargestNumbers2(arr) {
+  return arr.sort((a,b) => b - a).filter((val, i) => i < 3 ? val : null).sort((a,b) => a - b);
+}
+
+findThreeLargestNumbers2(testArray)
