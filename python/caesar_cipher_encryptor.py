@@ -38,3 +38,16 @@ def caesar_cipher_encryptor(string, key):
 # testString = 'xyz'
 # x = caesar_cipher_encryptor(testString, 2)
 # print(x)
+
+
+# =========================
+# Post implementation notes
+# =========================
+# This time complexity for the index() method is O(n), the array is traversed to find the index
+# This is not random/direct access which would have O(1) time complexity
+# So it takes O(n) time to traverse the string argument and O(m) time to traverse the reference string
+#
+# Another possible implementation of this would be to use unicode/ascii character numbers as well
+#
+# A further consideration would be if the "key" is particularly large (i.e. greater than 26)
+# We could use the % operator on the key as well in order to account for this
