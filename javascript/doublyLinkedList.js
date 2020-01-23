@@ -1,3 +1,34 @@
+/*
+
+============================
+Thoughts post implementation
+============================
+I've done other implementation of this data structure in the past but this was a little different
+Mostly it was the idea that external nodes with their own variable references could be passed into the list
+at several points and the case where a node was already in the list had to be handled at every step
+
+I didn't watch the intro video for this, instead I figured everything out by myself based on the question prompt and tests
+This was undoubtedly slow but I think it was a valuable experience because it was my first time writing code to pass tests
+while being very aware of the tests, how they work, and the expected results
+
+Key points
+1)  It pays to not only be very clear about the inputs and outputs, but also how we expect the data structure to behave
+    and how we expect the data structure to interact with other data types (reference types vs primitive values)
+    That is not to say that I think every possibility and edge case needs to be considered before a single line of code is written
+    But the more I go through these problems the more I realize that getting clear about inputs, outputs, data structure behavior,
+    and other specifications, it saves a lot of time in the end
+
+2)  Writing code to solve the tests is frustrating but provides a clear step-by-step path to solving the problem
+    This was the first time that I made extensive use of the tests
+    My initial solution was not "wrong" it was a solution given my understanding of the test prompt for the quest
+    But the text didn't give any indication that we would be saving references to nodes in variables and needed to be able to reposition nodes in the list at any time
+    That's where diving into the tests, understanding them, understand what it would take to make them pass, was valuable
+    The tests told me more about the expectations of the code than the prompt
+    Of course if there was another human being to ask questions to this could be resolved with much less frustration
+    But it's good to know I can get it done either way
+
+*/
+
 class Node {
   constructor(value) {
     this.value = value;
