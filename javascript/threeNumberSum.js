@@ -51,6 +51,25 @@ function threeNumberSum (array, targetSum) {
 // x = threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0);
 // x = threeNumberSum([1, 2, 3], 6);
 // x = threeNumberSum([12, 3, 1, 2, -6, 5, 0, -8, -1, 6], 0);
-console.log(x);
+// console.log(x);
 
-// I need to work on built in array methods
+
+/*
+
+============================
+Thoughts post-implementation
+============================
+I had initially thought of using two pointers to solve this problem as in my pseudocode
+but I couldn't quite get it to work and instead implemented a kind of nested for loop solution
+I am not exactly sure about the time complexity but I don't think it is quite as bad as O(n^3) which 3 for loops would have been
+I think it's more like O(n^2 log(n)) but that is still not as good as the ideal O(n^2) solution
+It would be a good idea to ask someone more knowledgeable about that
+
+Regardless it seems the ideal solution does use two pointers so I will try it again with that in mind
+
+Also, I need to work on built in array methods
+I couldn't remember if I needed array.sort((a,b) => a - b) or array.sort((a,b) => b - a)
+I also couldn't remember if it created a copy or mutated the original array
+These are things to keep in mind for the future
+
+*/
