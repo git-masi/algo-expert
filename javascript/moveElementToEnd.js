@@ -1,17 +1,16 @@
 function moveElementToEnd(array, elementToMove) {
   let lastUnmovedIndex = array.length - 1;
 
-  while (array[lastUnmovedIndex] === elementToMove) lastUnmovedIndex--;
-
   for (let i = 0; i < lastUnmovedIndex; i++) {
+    while (i < lastUnmovedIndex && array[lastUnmovedIndex] === elementToMove) lastUnmovedIndex--;
     if (array[i] === elementToMove) {
       swap(array, i, lastUnmovedIndex);
     }
-    while (array[lastUnmovedIndex] === elementToMove) lastUnmovedIndex--;
   }
 
   return array;
 }
+
 
 function swap(array, index1, index2) {
   const temp = array[index1];
