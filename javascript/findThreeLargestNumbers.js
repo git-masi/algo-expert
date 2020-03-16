@@ -46,3 +46,57 @@ function findThreeLargestNumbers2(arr) {
 }
 
 findThreeLargestNumbers2(testArray)
+
+
+// Simplified version using built in array methods
+// This improves on the above function
+function findThreeLargestNumbers3(arr) {
+  return arr.sort((a,b) => a - b).slice(arr.length - 3);
+}
+
+
+// Version relying on sorted array of largest nums
+function findThreeLargestNumbers4(arr) {
+  if (arr.length === 3) return arr.sort((a,b) => a - b);
+
+	const threeLargestNums = [arr[0], arr[1], arr[2]].sort((a,b) => b - a);
+
+	for (let i = 3; i < arr.length; i++) {
+		if (arr[i] > threeLargestNums[2]) {
+		 	if (arr[i] > threeLargestNums[0]) {
+				threeLargestNums.splice(0, 0, arr[i]);
+				threeLargestNums.pop();
+			} else if (arr[i] > threeLargestNums[1]) {
+				threeLargestNums.splice(1, 0, arr[i]);
+				threeLargestNums.pop();
+			} else {
+				threeLargestNums.splice(2, 0, arr[i]);
+				threeLargestNums.pop();
+			}
+		}
+	}
+
+	return threeLargestNums.sort((a,b) => a - b);
+}
+
+
+// Version that does not use extra space
+function findThreeLargestNumbers5(arr) {
+  const threeLargestNums = [arr[0], arr[1], arr[2]].sort((a,b) => a - b);
+
+  for (let i = 3; i < arr.length; i++) {
+    if (arr[i] > threeLargestNums[0]) {
+      threeLargestNums[0] = arr[i];
+
+      for (let j = 1; j < threeLargestNums.length; j++) {
+        if (threeLargestNums[j] < threeLargestNums[j - 1]) swap(threeLargestNums, j, j - 1);
+      }
+    }
+  }
+
+  return threeLargestNums;
+}
+
+function swap(arr, idx1, idx2) {
+  return [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+}
